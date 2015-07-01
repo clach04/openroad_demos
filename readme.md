@@ -1,11 +1,45 @@
 Files in this directory:
-- readme1st.txt: This file
-- demobuilder.zip:
-    The archive containing files to load the old-style "videos" application and required data.
-    It is used in the PropertyChanger demo (see below).
+- readme.md: This file
 - demobuilder.xml
     The export file of the demobuilder application.
     The image file of this application is used as demobldr.img file in the demobuilder.zip archive.
+- w4gldemo directory:
+    Contains files to load the old-style "videos" application and required data.
+    It is used in the PropertyChanger demo (see below).
+
+
+Importing Quick Start
+---------------------
+
+Demobuilder is an OpenROAD application used for loading demo source code and
+data. The steps below will import Demobuilder and then use Demobuilder to load
+the Videos demo application and data.
+
+The example below assumes a database name of `ordemo` which is remote and
+accessed via a vnode (virtual node) called `vnode`. For example:
+
+    sql vnode::ordemo
+
+Demobuilder needs to be ran as the database administrator, that is, the owner
+of the database ordemo.
+
+Import demobuilder application into an application named `demobuilder`:
+
+    w4gldev backupapp in vnode::ordemo demobuilder demobuilder.xml
+
+Then run demobuilder:
+
+    set II_W4GL_DEMO=w4gldemo
+    rundbapp vnode::ordemo demobuilder
+
+NOTE `set` is Windows specific.
+
+   * Hit the "Load" button.
+
+Then run Videos application:
+
+    rundbapp vnode::ordemo videos
+
 
 
 PropertyChanger Demo
