@@ -2,7 +2,6 @@ Files in this directory:
 - readme.md: This file
 - demobuilder.xml
     The export file of the demobuilder application.
-    The image file of this application is used as demobldr.img file in the demobuilder.zip archive.
 - w4gldemo directory:
     Contains files to load the old-style "videos" application and required data.
     It is used in the PropertyChanger demo (see below).
